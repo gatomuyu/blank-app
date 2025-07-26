@@ -31,7 +31,7 @@ st.text_input("**If Its Another Currency, Please Put The Currency (Global) You W
 st.number_input("Select The Salary Amount You Expect Yearly")
 st.radio("Employment Desired", ["Full-Time", "Part-Time", "Seasonal"])
 felony = st.radio("**Have You Ever Been Convicted Of A Felony**", ["No", "Yes"])
-st.text_input("**If Yes, Please Explain Why**")
+reason_of_felony = st.text_input("**If Yes, Please Explain Why**")
 
 #Education Questions
 st.title("Education Questions")
@@ -87,7 +87,7 @@ def submit():
             receiver = "brightchineseedu@gmail.com"
             password = apppass
             subject = "Python Felony Question"
-            body = f"Felony Question: {felony}"
+            body = f"Felony Question: {reason_of_felony}"
 
             # Header
             message = f"""From: Loud Code
