@@ -82,18 +82,21 @@ def submit():
             st.write("Something Went Wrong...")
 
     else:
-        sender = gmail
-        receiver = "brightchineseedu@gmail.com"
-        password = apppass
-        subject = "Python Felony Question"
-        body = f"Felony Question: {felony}"
+        try:
+            sender = gmail
+            receiver = "brightchineseedu@gmail.com"
+            password = apppass
+            subject = "Python Felony Question"
+            body = f"Felony Question: {felony}"
 
-        # Header
-        message = f"""From: Loud Code
-        To:{receiver}
-        Subject: {subject}\n
-        {body}
-        """
+            # Header
+            message = f"""From: Loud Code
+            To:{receiver}
+            Subject: {subject}\n
+            {body}
+            """
+        except Exception:
+            st.write("Something Went Wrong...")
 
 #Finishing Touches
 if st.button("Submit"):
