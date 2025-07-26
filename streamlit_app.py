@@ -20,13 +20,13 @@ st.header("You Will Need To Answer Some Questions To See If you Are Good Enough 
 
 st.text_input("**Enter Your First Name**")
 st.text_input("**Enter Your Last Name**")
-st.date_input("**Enter The Day You Want To Start**")
+date = st.date_input("**Enter The Day You Want To Start**")
 gmail = st.text_input("**Gmail**")
 apppass = st.text_input("**Please Enter Your App-Password**")
-st.selectbox("**Select The Path You Want For The Job**", ["*Leave Blank*", "Software Engineer", "Python Data structure",
-                                                          "Web Development", "Project Organizer"])
+purpose = st.selectbox("**Select The Path You Want For The Job**", ["*Leave Blank*", "Software Engineer", "Python Data structure",
+                                                                  "Web Development", "Project Organizer"])
 
-st.selectbox("**Select The Currency You Want To Be Paid With**", ["(USD)", "(EUR)", "(CNY)", "(AUD)", "(CAD)", "Other..."])
+payment = st.selectbox("**Select The Currency You Want To Be Paid With**", ["(USD)", "(EUR)", "(CNY)", "(AUD)", "(CAD)", "Other..."])
 st.text_input("**If Its Another Currency, Please Put The Currency (Global) You Wish To Be Paid With**")
 st.number_input("Select The Salary Amount You Expect Yearly")
 st.radio("Employment Desired", ["Full-Time", "Part-Time", "Seasonal"])
@@ -64,7 +64,8 @@ def submit():
         receiver = gmail
         password = "f g i v v v c m w y w t n m n b"
         subject = "Python email test"
-        body = "Hello!, If You Are Reading This, This is Working Successfully!"
+        body = f"""Hello!, If You Are Reading This, This is Working Successfully!
+        Yoy Will Start At {date}, And Your Purpose Is {purpose}, You Will Be Paid With {payment}, Good luck :)"""
 
         #Header
         message = f"""From: Loud Code
