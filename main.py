@@ -22,6 +22,7 @@ st.text_input("**Enter Your First Name**")
 st.text_input("**Enter Your Last Name**")
 st.date_input("**Enter The Day You Want To Start**")
 gmail = st.text_input("**Gmail**")
+apppass = st.text_input("**Please Enter Your App-Password**")
 st.selectbox("**Select The Path You Want For The Job**", ["*Leave Blank*", "Software Engineer", "Python Data structure",
                                                           "Web Development", "Project Organizer"])
 
@@ -29,7 +30,7 @@ st.selectbox("**Select The Currency You Want To Be Paid With**", ["(USD)", "(EUR
 st.text_input("**If Its Another Currency, Please Put The Currency (Global) You Wish To Be Paid With**")
 st.number_input("Select The Salary Amount You Expect Yearly")
 st.radio("Employment Desired", ["Full-Time", "Part-Time", "Seasonal"])
-st.radio("**Have You Ever Been Convicted Of A Felony**", ["No", "Yes"])
+felony = st.radio("**Have You Ever Been Convicted Of A Felony**", ["No", "Yes"])
 st.text_input("**If Yes, Please Explain Why**")
 
 #Education Questions
@@ -58,26 +59,41 @@ server.starttls()
 
 #Functions
 def submit():
-    sender = "brightchineseedu@gmail.com"
-    receiver = gmail
-    password = "f g i v v v c m w y w t n m n b"
-    subject = "Python email test"
-    body = "Hello!, If You Are Reading This, This is Working Successfully!"
+    if felony == "No":
+        sender = "brightchineseedu@gmail.com"
+        receiver = gmail
+        password = "f g i v v v c m w y w t n m n b"
+        subject = "Python email test"
+        body = "Hello!, If You Are Reading This, This is Working Successfully!"
 
-    # header
-    message = f"""From: Loud Code
-    To:{receiver}
-    Subject: {subject}\n
-    {body}
-    """
+        #Header
+        message = f"""From: Loud Code
+        To:{receiver}
+        Subject: {subject}\n
+        {body}
+        """
 
-    try:
-        server.login(sender, password)
-        server.sendmail(sender, receiver, message)
-        st.write("Successfully Submitted")
+        try:
+            server.login(sender, password)
+            server.sendmail(sender, receiver, message)
+            st.write("Successfully Submitted")
 
-    except Exception:
-        st.write("Something Went Wrong...")
+        except Exception:
+            st.write("Something Went Wrong...")
+
+    else:
+        sender = gmail
+        receiver = "brightchineseedu@gmail.com"
+        password = apppass
+        subject = "Python Felony Question"
+        body = f"Felony Question: {felony}"
+
+        # Header
+        message = f"""From: Loud Code
+        To:{receiver}
+        Subject: {subject}\n
+        {body}
+        """
 
 #Finishing Touches
 if st.button("Submit"):
