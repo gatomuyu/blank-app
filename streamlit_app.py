@@ -27,7 +27,7 @@ purpose = st.selectbox("**Select The Path You Want For The Job**", ["*Leave Blan
                                                                   "Web Development", "Project Organizer"])
 
 payment = st.selectbox("**Select The Currency You Want To Be Paid With**", ["(USD)", "(EUR)", "(CNY)", "(AUD)", "(CAD)", "Other..."])
-st.text_input("**If Its Another Currency, Please Put The Currency (Global) You Wish To Be Paid With**")
+other_payment = st.text_input("**If Its Another Currency, Please Put The Currency (Global) You Wish To Be Paid With**")
 st.number_input("Select The Salary Amount You Expect Yearly")
 st.radio("Employment Desired", ["Full-Time", "Part-Time", "Seasonal"])
 felony = st.radio("**Have You Ever Been Convicted Of A Felony**", ["No", "Yes"])
@@ -56,6 +56,10 @@ st.radio("Do You Know The Important Stuff In Python Such As Functions, Dataclass
 
 server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()
+
+if payment == "Other...":
+    payment = other_payment
+
 
 #Functions
 def submit():
