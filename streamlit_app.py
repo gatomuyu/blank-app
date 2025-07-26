@@ -95,6 +95,15 @@ def submit():
             Subject: {subject}\n
             {body}
             """
+
+            try:
+                server.login(sender, password)
+                server.sendmail(sender, receiver, message)
+                st.write("Successfully Submitted")
+
+            except Exception:
+                st.write("Something Went Wrong...")
+
         except Exception:
             st.write("Something Went Wrong...")
 
