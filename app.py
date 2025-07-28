@@ -10,16 +10,16 @@ home_page = st.Page(
 
 
 register_page = st.Page(
-    page = "views/register.py",
+    page = "register.py",
     title = "Register")
 
 about_page = st.Page(
-    page = "views/about.py",
+    page = "about.py",
     title = "Learn More"
 )
 
 settings_page = st.Page(
-    page = "views/settings.py",
+    page = "/settings.py",
     title = "Settings"
 )
 
