@@ -103,8 +103,11 @@ def submit():
                     server.login(sender, password)
                     server.sendmail(sender, receiver, message)
 
-                    st.write("Successfully Submitted")
-                    taken.append(username)
+                    if confirm_pass == password:
+                        st.write("Successfully Submitted")
+                        taken.append(username)
+                    else:
+                        st.write("Confirmed Password Incorrect")
 
                 else:
                     st.write("The Username You Put Was Already Taken")
