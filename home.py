@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 
-image2 = Image.open("images/Welcome.jpg")
+image2 = Image.open("Welcome.jpg")
 
 new_img2 = image2.resize((700, 500))
 
