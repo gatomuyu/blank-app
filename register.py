@@ -86,10 +86,6 @@ def submit():
 
                     if get_user == username:
                         can_yes = False
-                if can_yes:
-                    server.login(sender, password)
-                    server.sendmail(sender, receiver, message)
-
                 sender = "brightchineseedu@gmail.com"
                 receiver = gmail
                 password = "w q u m c s b l a r x h u b h z"
