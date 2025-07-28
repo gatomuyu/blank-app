@@ -19,7 +19,7 @@ about_page = st.Page(
 )
 
 settings_page = st.Page(
-    page = "/settings.py",
+    page = "settings.py",
     title = "Settings"
 )
 
