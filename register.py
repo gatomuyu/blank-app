@@ -103,7 +103,7 @@ def submit():
                     server.login(sender, password)
                     server.sendmail(sender, receiver, message)
 
-                    if confirm_pass == password:
+                    if confirm_pass == account_password:
                         st.write("Successfully Submitted")
                         taken.append(username)
                     else:
