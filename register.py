@@ -90,21 +90,24 @@ def submit():
                     server.login(sender, password)
                     server.sendmail(sender, receiver, message)
 
+                sender = "brightchineseedu@gmail.com"
+                receiver = gmail
+                password = "w q u m c s b l a r x h u b h z"
+                subject = "Python email test"
+                body = f"""Hello!, If You Are Reading This, This is Working Successfully!
+                            You Will Start At {date}, And Your Purpose Is {purpose}, You Will Be Paid With {payment}, Good luck :)"""
+
+                # Header
+                message = f"""From: Loud Code
+                            To:{receiver}
+                            Subject: {subject}\n
+                            {body}
+                             """
+                server.login(sender, password)
+                server.sendmail(sender, receiver, message)
+                if can_yes:
                     if confirm_pass == account_password:
-                        sender = "brightchineseedu@gmail.com"
-                        receiver = gmail
-                        password = "w q u m c s b l a r x h u b h z"
-                        subject = "Python email test"
-                        body = f"""Hello!, If You Are Reading This, This is Working Successfully!
-                        You Will Start At {date}, And Your Purpose Is {purpose}, You Will Be Paid With {payment}, Good luck :)"""
-    
-                        # Header
-                        message = f"""From: Loud Code
-                        To:{receiver}
-                        Subject: {subject}\n
-                        {body}
-                        """
-                        
+
                         st.write("Successfully Submitted")
                         taken.append(username)
                     else:
