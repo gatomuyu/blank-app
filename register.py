@@ -4,7 +4,7 @@ import smtplib
 
 st.title("(Register) Welcome To Python Job Application")
 
-image1 = Image.open("images/Python_Image.jpg")
+image1 = Image.open("Python_Image.jpg")
 
 new_img1 = image1.resize((500, 300))
 
